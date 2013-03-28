@@ -20,7 +20,7 @@
 #	@desc:	download all photos of facebook's profiles
 #	@last_mod:	28/03/13
 #	@lang:		BASH
-#	@vers:		1
+#	@vers:		2
 #	@author:	REmaxer
 
 #	[function]
@@ -41,7 +41,7 @@ function download_pic {
 	echo "Pic URL will be '$PIC_URL'"
 	echo "Downloading facebook profile pic"
 	#download pic
-	wget --directory-prefix="Pics" --user-agent="Chrome/24.0.1312.56 Safari/537.17"  --load-cookies cookies.txt $PIC_URL
+	wget -O "Pics/user$1.jpg" --user-agent="Chrome/24.0.1312.56 Safari/537.17"  --load-cookies cookies.txt $PIC_URL
 	echo "Pic downloaded"
 }
 
