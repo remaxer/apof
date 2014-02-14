@@ -18,7 +18,7 @@
 #
 #	[file]
 #	@desc:	download all photos of facebook's profiles
-#	@last_mod:	28/03/13
+#	@last_mod:	14/02/14
 #	@lang:		BASH
 #	@vers:		2
 #	@author:	REmaxer
@@ -37,7 +37,7 @@ function download_pic {
 	PAGE_NAME=$(echo $URL | cut -c 18-)
 	echo "Page name will be '$PAGE_NAME'"
 	#parsing page to find pic URL
-	PIC_URL=$(grep -Po '(?<=profilePic img\" src=\")https://.+.jpg(?=\" alt)' Pages/$PAGE_NAME)	#using regexp
+	PIC_URL=$(grep -Po '(?<=\" src=\")https://[a-zA-Z0-9_/\-.]+.jpg(?=\" />)' Pages/$PAGE_NAME)	#using regexp
 	echo "Pic URL will be '$PIC_URL'"
 	echo "Downloading facebook profile pic"
 	#download pic
